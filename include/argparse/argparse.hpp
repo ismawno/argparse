@@ -90,7 +90,7 @@ ARGPARSE_NO_RETURN void argparse_throw(Args &&...args) {
   throw Ex(std::forward<Args>(args)...);
 }
 #else
-ARGPARSE_NO_RETURN void handle_exception(const char *what) {
+ARGPARSE_NO_RETURN inline void handle_exception(const char *what) {
   std::cerr << what;
   std::terminate();
 }
